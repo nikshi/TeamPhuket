@@ -1,4 +1,4 @@
-<form method="get" action="" class="singup">
+<form method="post" action="PHP/registration.php" class="singup">
     <h1>Sign up</h1>
 
     <label for="name">Name</label>
@@ -6,7 +6,7 @@
 
     <label
         for="username">Username &emsp;
-        <span id="user-length">/Username must have only one world/</span>
+        <span id="user-length">/Username must have only one word/</span>
         <span id="userCharacter-length">/Username must have at least 3 characters/</span>
     </label>
     <input name="username" type="text" id="username" class="user" placeholder="e.g. greatname123"/>
@@ -32,5 +32,5 @@
     <label for="country">Country</label>
     <input name="country" type="text"  id="country" class="country" placeholder="e.g. Bulgaria"/>
 
-    <input name="Submit" type="button" value="Submit" class="buttons"/>
+    <input name="submit" type="submit" value="Submit" id="registerButton" class="buttons"/>
 </form>

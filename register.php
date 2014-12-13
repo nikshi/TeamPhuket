@@ -1,5 +1,7 @@
 <?php
-require 'header.php';;
+require 'header.php';
+require 'config.php';
+
 ?>
 <main>
     <div id="main-content">
