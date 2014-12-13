@@ -167,6 +167,24 @@ footer {
     margin-top: 0;
 }
 
+#write-post-form {
+    width: 100%;
+    border: 0px;
+    -webkit-box-shadow: 0 0px 0px rgba(105, 108, 109, 0.5), 0 0 0px 0px rgba(208, 223, 226, 0.3) inset;
+    -moz-box-shadow: 0 0px 0px rgba(105, 108, 109, 0.5), 0 0 0px 0px rgba(208, 223, 226, 0.3) inset;
+    box-shadow: 0px 0px rgba(105, 108, 109, 0.5),	0 0 0px 0px rgba(208, 223, 226, 0.3) inset;
+    margin: 0 auto;
+    margin-top: 8%;
+    background: none;
+}
+.write-post-fields {
+    width: 550px;
+    /*float: left;*/
+    height: 35px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
 
 
 
