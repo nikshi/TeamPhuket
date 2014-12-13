@@ -1,0 +1,187 @@
+@import url(http://fonts.googleapis.com/css?family=Gloria+Hallelujah);   /* Blog name's font : Gloria Hallelujah*/
+@import url(http://fonts.googleapis.com/css?family=Passion+One:400,700,900);     /* Menu's font : Holtwood One SC*/
+@import url(http://fonts.googleapis.com/css?family=Cuprum:400,700,400italic,700italic);  /*article titles, module titles: Cuprum*/
+html {
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+}
+
+body {
+    padding: 0px;
+    background-color: #f6f4f6;
+}
+header {
+    width:100%;
+    height: 380px;
+    margin: 0px;
+    margin: 0 auto;
+    background-image: url("../images/header_bg.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    overflow: auto;
+}
+.logo {
+    margin:180px 0px 0px 150px;
+    font-size: 3rem;
+    text-shadow: #fff 1px 1px 5px;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+.logo a{
+    color:#022046;
+    text-decoration: none;
+    font-size: 3rem;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+header h1 a:hover{
+
+    text-decoration: none;
+}
+nav {
+    margin: 15px 0px 0px 150px;
+}
+nav p {
+    color: #f3b911;
+    font-size: 1.2rem;
+    font-family: 'Passion One', cursive;
+    float: left;
+    margin: 4px 0px 0px 10px;
+}
+nav ul {
+
+}
+nav ul li {
+    list-style-type: none;
+    display: inline;
+    padding: 0px 10px 0px 10px;
+    margin-left: 10px;
+
+}
+nav ul li a{
+    text-decoration: none;
+    color: #ca6d09;
+    font-size: 1.5rem;
+    font-family: 'Passion One', cursive;
+    text-shadow: #cccccc 1px 1px;
+}
+nav ul li a:hover{
+    color: #0b78fe;
+
+}
+
+main {
+    width:70%;
+    margin: 0 auto;
+}
+#main-content {
+    border-right: 1px solid #ccc;
+    width: 65%;
+    float: left;
+    padding: 0 3% 3% 3%;
+}
+aside {
+    width: 35%;
+    padding: 0 3% 3% 3%;
+    overflow: hidden;
+}
+aside h2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: 'Cuprum', sans-serif;
+    color: #2c91bb;
+    margin-bottom: 15px;
+}
+article h1 {
+    font-family: 'Cuprum', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2c91bb;
+}
+#date-and-user {
+    margin-bottom: 15px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.8rem;
+    color: #646464;
+}
+#article-text {
+   color: #323232;
+    white-space: pre-wrap;
+    font-size: 1.1rem;
+}
+#article-text::first-letter {
+    font-weight: bold;
+}
+.post-lists {
+    margin-bottom: 30px;
+}
+.post-lists ul li{
+    line-height: 1.42857143;
+}
+
+.post-lists ul li a{
+    text-decoration: none;
+}
+.tags a{
+    text-decoration: none;
+    color: #f3b911;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+.tags a:hover{
+    color: #a12800;
+}
+.input-group {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.submitBtn {
+    width: 200px;
+    margin-top: 20px;
+    float: right;
+}
+
+.commentForm {
+    margin-bottom: 150px;
+}
+
+footer {
+    width:100%;
+    height: 170px;
+    background-image: url("../images/footer_bg.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    overflow: auto;
+
+}
+.login {
+    margin-left: 150px;
+    margin-top: 5px;
+}
+.loginFields {
+    width: 200px;
+    float: left;
+    margin-left: 20px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+/*reset bootstrap*/
+.nav>li>a {
+    position: relative;
+    /*padding: 0px 0px;*/
+}
+.nav-tabs>li>a {
+    margin-right: 2px;
+
+}
