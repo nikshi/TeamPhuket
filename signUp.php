@@ -1,4 +1,4 @@
-<form method="get" action="">
+<form method="get" action="" class="singup">
     <h1>Sign up</h1>
 
     <label for="name">Name</label>

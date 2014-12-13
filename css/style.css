@@ -70,7 +70,7 @@ nav ul li a:hover{
 }
 
 main {
-    width:70%;
+    width:85%;
     margin: 0 auto;
 }
 #main-content {
@@ -167,7 +167,13 @@ footer {
     margin-top: 0;
 }
 
-
+.user-write  {
+    background-repeat: no-repeat;
+    background-position-x: .8%;
+    background-position-y: 50%;
+    background-color: #FFFFFF;
+    background-size: 6%;
+}
 
 
 
