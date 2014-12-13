@@ -10,7 +10,7 @@ form{
 }
 
 label {
-    width: 30%;
+    width: 60%;
     margin-left: 7%;
     margin-bottom: 0;
     padding-top: 11px;
@@ -44,9 +44,8 @@ h1:after{
 
 input{
     width: 85%;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: .5%;
+    display: inline-block;
+    margin: 0 5px 6px 35px;
     padding: 2% 0 2% 6%;
     border-radius: 5px;
     border: 1px solid #979797;
@@ -55,6 +54,7 @@ input{
     -moz-box-shadow: 0 1px 4px 0 rgba(168, 168, 168, 0.6) inset;
     box-shadow: 0 1px 4px 0 rgba(168, 168, 168, 0.6) inset;
 }
+
 
 .user {
     background-image: url(../images/user.png);
@@ -101,9 +101,24 @@ input{
     background-position-y: 50%;
 }
 
+.positive{
+    width: 4%;
+    display: none;
+}
+
+.negative{
+    width: 4%;
+    display: none;
+}
+
+#pass-length{
+    display: none;
+}
+
 .buttons {
     background: #e3e3db;
     margin: 0 auto;
+    display: block;
     margin-top: 5%;
     margin-bottom: 5%;
     width: 130px;

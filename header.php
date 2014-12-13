@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/signup.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="JS/functions.js"></script>
 </head>
 <body>
 <header>

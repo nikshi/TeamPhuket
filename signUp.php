@@ -6,15 +6,21 @@
 
     <label for="username">Username</label>
     <input name="username" type="text" id="username" class="user" placeholder="e.g. greatname123"/>
+    <img src="images/Tick.png" class="positive" id="positive-user" alt="correct"/>
+    <img src="images/Red_x.png" class="negative" id="negative-user" alt="incorrect"/>
 
     <label for="email">Email</label>
     <input name="email" type="email" id="email" class="email" placeholder="e.g. mymail@mail.com"/>
+    <img src="images/Tick.png" class="positive" id="positive-email" alt="correct"/>
+    <img src="images/Red_x.png" class="negative" id="negative-email" alt="incorrect"/>
 
-    <label for="password">Password</label>
+    <label for="password">Password &emsp;<span id="pass-length">/At least 4 characters/</span></label>
     <input name="password" type="password" id="password" class="password" placeholder="e.g. Ytr7d!0f"/>
 
     <label for="confirm-pass">Confirm password</label>
-    <input name="confirm-pass" type="text" id="confirm-pass" class="password" placeholder="e.g. Ytr7d!0f"/>
+    <input name="confirm-pass" type="password" id="confirm-pass" class="password" placeholder="e.g. Ytr7d!0f"/>
+    <img src="images/Tick.png" class="positive" id="positive-pass" alt="correct"/>
+    <img src="images/Red_x.png" class="negative" id="negative-pass" alt="incorrect"/>
 
     <label for="city">City</label>
     <input name="city" type="text" id="city" class="city" placeholder="e.g. Sofia"/>
