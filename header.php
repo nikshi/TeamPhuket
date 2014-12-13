@@ -5,9 +5,8 @@
     <title>Phunket Blog</title>
     <link rel="stylesheet" href="css/resetter.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/signup.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="ckeditor/ckeditor.js"></script>
+    <link rel="stylesheet" href="css/signup.css">
 </head>
 <body>
 <header>
