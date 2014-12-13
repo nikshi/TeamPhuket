@@ -72,4 +72,18 @@ $(document).ready(function(){
             $('#negative-user').show('fast');
         }
     });
+
+    $('#email').keyup(function(){
+        var email = $('#email').val();
+
+        var pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+        if(pattern.test(email)){
+            $('#positive-email').show('fast');
+            $('#negative-email').hide();
+        } else{
+            $('#positive-email').hide();
+            $('#negative-email').show('fast');
+        }
+    });
 });
