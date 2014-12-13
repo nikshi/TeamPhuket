@@ -4,7 +4,11 @@
     <label for="name">Name</label>
     <input name="name" type="text" id="name" class="user" placeholder="e.g. John Doe"/>
 
-    <label for="username">Username</label>
+    <label
+        for="username">Username &emsp;
+        <span id="user-length">/Username must have only one world/</span>
+        <span id="userCharacter-length">/Username must have at least 3 characters/</span>
+    </label>
     <input name="username" type="text" id="username" class="user" placeholder="e.g. greatname123"/>
     <img src="images/Tick.png" class="positive" id="positive-user" alt="correct"/>
     <img src="images/Red_x.png" class="negative" id="negative-user" alt="incorrect"/>

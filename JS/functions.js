@@ -42,5 +42,34 @@ $(document).ready(function(){
         }
     });
 
-    
+    $('#username').keyup(function(){
+        var username = $('#username').val();
+        var wordCounter = username.match(/(\w+)/g).length;
+        var validWordLength = false;
+        var validWordsCount = false;
+
+        if(wordCounter > 1){
+            $('#user-length').show();
+            validWordsCount = false;
+        } else{
+            $('#user-length').hide();
+            validWordsCount = true;
+        }
+
+        if(username.length < 3){
+            $('#userCharacter-length').show();
+            validWordLength = false;
+        } else{
+            $('#userCharacter-length').hide();
+            validWordLength = true;
+        }
+
+        if(validWordLength && validWordsCount){
+            $('#positive-user').show('fast');
+            $('#negative-user').hide();
+        }else{
+            $('#positive-user').hide();
+            $('#negative-user').show('fast');
+        }
+    });
 });
