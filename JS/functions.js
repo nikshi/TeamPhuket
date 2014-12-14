@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#registerButton').attr("disabled", true);
+    $('#registerButton').attr("disabled", false);
 
     $('#password').keyup(function(){
         var password = $('#password').val();

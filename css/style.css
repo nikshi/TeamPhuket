@@ -158,6 +158,7 @@ footer {
 .login {
     margin-left: 150px;
     margin-top: 5px;
+    height: 28px;
 }
 .loginFields {
     width: 200px;

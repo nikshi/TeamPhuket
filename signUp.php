@@ -1,4 +1,4 @@
-<form method="post" action="PHP/registration.php" class="singup">
+<form method="post" action="php/registration.php" class="singup">
     <h1>Sign up</h1>
 
     <label for="name">Name</label>
@@ -31,6 +31,5 @@
 
     <label for="country">Country</label>
     <input name="country" type="text"  id="country" class="country" placeholder="e.g. Bulgaria"/>
-
     <input name="submit" type="submit" value="Submit" id="registerButton" class="buttons"/>
 </form>

@@ -1,5 +1,6 @@
 <?php
-require 'config.php'
+require 'config.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,18 +17,38 @@ require 'config.php'
 </head>
 <body>
 <header>
-    <div class="login">
-        <div class="input-group input-group-sm loginFields">
-            <span class="input-group-addon">@</span>
-            <input type="text" class="form-control" placeholder="Username">
+    <?php
+    if (isset($_SESSION['loggedUser'])):
+        ?>
+        <div class="login"><span>Hello, <?php echo $_SESSION['loggedUserName'] ?></span>
+            <a href="php/logout.php">
+                <button type="button" class="btn btn-default btn-sm ">Logout</button>
+            </a>
+            <a href="writepost.php">
+                <button type="button" class="btn btn-default btn-sm ">Write post</button>
+            </a>
         </div>
-        <div class="input-group input-group-sm loginFields">
-            <span class="input-group-addon">@</span>
-            <input type="text" class="form-control" placeholder="Username">
-        </div>
-        <button type="button" class="btn btn-default btn-sm ">Login</button>
-        <button type="button" class="btn btn-default btn-sm ">Register</button>
-    </div>
+
+    <?php
+    else :
+        ?>
+        <form method="post" action="php/login.php">
+            <div class="login">
+                <div class="input-group input-group-sm loginFields">
+                    <span class="input-group-addon">@</span>
+                    <input type="text" class="form-control" name="user" placeholder="Username">
+                </div>
+                <div class="input-group input-group-sm loginFields">
+                    <span class="input-group-addon">@</span>
+                    <input type="password" name="password" class="form-control" placeholder="Password">
+                </div>
+                <button type="submit" name="submit" class="btn btn-default btn-sm ">Login</button>
+                <a href="register.php">
+                    <button type="button" class="btn btn-default btn-sm ">Register</button>
+                </a>
+            </div>
+        </form>
+    <?php endif; ?>
     <nav><p>CATEGORIES:</p>
 
         <div class="menu">
