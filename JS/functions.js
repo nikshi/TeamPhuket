@@ -50,13 +50,14 @@ $(document).ready(function(){
         var validWordLength = false;
         var validWordsCount = false;
 
-        if(wordCounter > 1){
+        if(wordCounter > 1 || username.indexOf(" ") > 0){
             $('#user-length').show();
             validWordsCount = false;
         } else{
             $('#user-length').hide();
             validWordsCount = true;
         }
+
 
         if(username.length < 3){
             $('#userCharacter-length').show();
