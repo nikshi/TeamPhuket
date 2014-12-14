@@ -1,4 +1,4 @@
-<form method="get" action="" class="singup">
+<form method="get" action="php/savepost.php" class="singup">
     <h1>Write post</h1>
     <input name="title" type="text" id="name" class="user-write" placeholder="Write a title of article"/>
     <textarea name="editor1" id="editor1" rows="10" cols="80">
@@ -9,5 +9,5 @@
     </script>
     <input name="tags" type="text" id="name" class="user-write" placeholder="Add tags..."/>
 
-    <input name="Submit" type="button" value="Submit" class="buttons"/>
+    <input name="submit" type="submit" value="Submit" class="buttons"/>
 </form>
