@@ -9,6 +9,8 @@ if (isset($_POST['submit'])){
     $city = mysqli_real_escape_string($con, $_POST['city']);
     $country = mysqli_real_escape_string($con, $_POST['country']);
 
+    $password = hash('sha256', $password);
+
     $query = "SELECT id FROM `users` WHERE username = '$username' LIMIT 1";
     $userResult = mysqli_query($con, $query);
 
