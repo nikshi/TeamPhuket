@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    $('#registerButton').attr("disabled", true);
+
     $('#password').keyup(function(){
         var password = $('#password').val();
         var confirm_pass = $('#confirm-pass').val();
@@ -86,4 +88,5 @@ $(document).ready(function(){
             $('#negative-email').show('fast');
         }
     });
+
 });
