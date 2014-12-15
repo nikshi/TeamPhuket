@@ -6,7 +6,7 @@ session_start();
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Phunket Blog</title>
+    <title>Phuket Blog</title>
     <link rel="stylesheet" href="css/resetter.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/signup.css">

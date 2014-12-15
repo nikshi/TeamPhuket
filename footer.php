@@ -1,5 +1,5 @@
 <footer>
-    <p>Copyright 2014 Team Phunket </p>
+    <p>Copyright 2014 Team Phuket </p>
 </footer>
 </body>
 </html>
