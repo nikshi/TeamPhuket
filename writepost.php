@@ -13,7 +13,7 @@ if(isset($_SESSION['loggedUser'])) :
     <?php else: ?>
     <main>
         <div id="main-content">
-            <h3>Sorry, but you must be logged in to write a post !</h3>
+            <h3>Sorry, but you must be logged in to write a post!</h3>
         </div>
         <?php endif; ?>
     <aside id="right-write-post">
