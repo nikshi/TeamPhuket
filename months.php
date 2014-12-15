@@ -21,6 +21,4 @@ require 'config.php';
 $monthQuery = "SELECT title FROM posts WHERE MONTH(date) = 12 AND YEAR(date) = 2014";
 $arr = $con->query($monthQuery);
 var_dump($arr->fetch_all());
-
-
 ?>
