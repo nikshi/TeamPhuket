@@ -1,11 +1,18 @@
 <div class="post-lists">
     <h2>Last posts</h2>
     <ul class="nav nav-tabs">
-        <li><a href="#">Title of article Bla Blq Blq Blq Blq<br> 12 Dec 2014, 22:13 <br> in JAVASCRIPT</a></li>
-        <li><a href="#">Title of article Bla Blq Blq Blq Blq<br> 12 Dec 2014, 22:13 <br> in JAVASCRIPT</a></li>
-        <li><a href="#">Title of article Bla Blq Blq Blq Blq<br> 12 Dec 2014, 22:13 <br> in JAVASCRIPT</a></li>
-        <li><a href="#">Title of article Bla Blq Blq Blq Blq<br> 12 Dec 2014, 22:13 <br> in JAVASCRIPT</a></li>
-        <li><a href="#">Title of article Bla Blq Blq Blq Blq<br> 12 Dec 2014, 22:13 <br> in JAVASCRIPT</a></li>
+        <?php
+        require 'config.php';
+        $lastPostsQuery = "SELECT * FROM posts ORDER BY date DESC LIMIT 0, 5";
 
+        $arr = $con->query($lastPostsQuery);
+
+        while($row = mysqli_fetch_assoc($arr)){
+            $title = $row['title'];
+            $date = $row['date'];
+            $id = $row['id'];
+            ?>
+            <li><a href="view.php?query=post&id=<?php echo $id ?>"><?php echo $title?><br> <?php echo $date?> <br> in JAVASCRIPT</a></li>
+        <?php } ?>
     </ul>
 </div>
