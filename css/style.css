@@ -102,6 +102,13 @@ aside {
         margin-bottom: 15px;
     }
 
+article {
+    margin: 25px 0;
+    border: 1px solid #808080;
+    border-radius: 10px;
+    padding: 25px;
+}
+
 article h1 {
     font-family: 'Cuprum', sans-serif;
     font-size: 2rem;
