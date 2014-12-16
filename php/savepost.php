@@ -6,9 +6,9 @@ if (isset($_GET['submit'])) {
     $post = $_GET['editor1'];
     $userID = $_SESSION['loggedUserID'];
     $tags = $_GET['tags'];
-    $category = $_GET['category'];
+    $category = $_GET['cat'];
     $tagsArr = explode(", ", $tags);
-    $sql = "INSERT INTO posts (title, text, user_id) VALUES ('$title', '$post', '$userID')";
+    $sql = "INSERT INTO posts (title, text, user_id, category) VALUES ('$title', '$post', '$userID', '$category')";
     mysqli_query($con, $sql);
 
     $postID = mysqli_insert_id($con);

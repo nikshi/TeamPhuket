@@ -5,18 +5,18 @@ if ($queryType == 'month') {
     $year = $_GET['year'];
 
     $queryType = "SELECT * FROM posts WHERE MONTH(date) = $month AND YEAR(date) = $year";
-    $arr = $con->query($queryType);
-    $posts = $arr->fetch_all();
 } else if ($queryType == 'post') {
     $id = $_GET['id'];
     $queryType = "SELECT * FROM posts WHERE id = $id";
-    $arr = $con->query($queryType);
-    $posts = $arr->fetch_all();
 } else if ($queryType == 'all') {
     $queryType = "SELECT * FROM posts";
-    $arr = $con->query($queryType);
-    $posts = $arr->fetch_all();
+} else if ($queryType == 'category') {
+    $cat = $_GET['cat'];
+    $queryType = "SELECT * FROM posts WHERE  category = $cat";
 }
+
+$arr = $con->query($queryType);
+$posts = $arr->fetch_all();
 
 function getUserIP() {
     if( array_key_exists('HTTP_X_FORWARDED_FOR', $_SERVER) && !empty($_SERVER['HTTP_X_FORWARDED_FOR']) ) {

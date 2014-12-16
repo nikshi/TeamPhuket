@@ -50,27 +50,17 @@ session_start();
         </form>
     <?php endif; ?>
     <nav><p>CATEGORIES:</p>
-
         <div class="menu">
             <ul>
                 <?php
-                $sql = "SELECT name FROM categories";
-               $result = mysqli_query($con, $sql);
+                $sql = "SELECT * FROM categories";
+                $result = mysqli_query($con, $sql);
                 while($categories = mysqli_fetch_row($result)){
-                    echo "<li><a href=\"#\">$categories[0]</a></li>";
+                    echo "<li><a href=\"view.php?query=category&cat=$categories[0]\">$categories[1]</a></li>";
                 }
 
-//                var_dump($categories);
 
-//                foreach($categories as $name => $values){
-//                    echo "<li><a href=\"#\">$values</a></li>";
-//                }
-//                ?>
-<!--                <li><a href="#">C#</a></li>-->
-<!--                <li><a href="#">JAVA</a></li>-->
-<!--                <li><a href="#">HTML 5</a></li>-->
-<!--                <li><a href="#">JAVASCRIPT</a></li>-->
-<!--                <li><a href="#">PHP</a></li>-->
+                ?>
             </ul>
         </div>
     </nav>
