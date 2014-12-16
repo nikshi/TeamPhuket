@@ -8,7 +8,7 @@ if (isset($_GET['submit'])) {
     $tags = $_GET['tags'];
     $category = $_GET['category'];
     $tagsArr = explode(", ", $tags);
-    $sql = "INSERT INTO posts (title, text, user_id, cat_id) VALUES ('$title', '$post', '$userID', '$category')";
+    $sql = "INSERT INTO posts (title, text, user_id) VALUES ('$title', '$post', '$userID')";
     mysqli_query($con, $sql);
 
     $postID = mysqli_insert_id($con);
@@ -18,10 +18,10 @@ if (isset($_GET['submit'])) {
     }
 
 
-//    if ($con->query($sql) === TRUE) {
-//        echo "New record created successfully";
-//    } else {
-//        echo "Error: " . $sql . "<br>" . $con->error;
-//    }
+    if ($con->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $con->error;
+    }
 
 }
