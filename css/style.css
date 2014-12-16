@@ -85,7 +85,7 @@ main {
     border-right: 1px solid #ccc;
     width: 65%;
     float: left;
-    padding: 0 3% 3% 3%;
+    padding: 0 1% 3% 3%;
 }
 
 aside {
@@ -204,4 +204,9 @@ footer {
 }
 .nav-tabs>li>a {
     margin-right: 2px;
+}
+.form-control {
+    width: 250px;
+    margin-left: 45px;
+    margin-bottom: 10px;
 }

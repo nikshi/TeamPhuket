@@ -53,11 +53,24 @@ session_start();
 
         <div class="menu">
             <ul>
-                <li><a href="#">C#</a></li>
-                <li><a href="#">JAVA</a></li>
-                <li><a href="#">HTML 5</a></li>
-                <li><a href="#">JAVASCRIPT</a></li>
-                <li><a href="#">PHP</a></li>
+                <?php
+                $sql = "SELECT name FROM categories";
+               $result = mysqli_query($con, $sql);
+                while($categories = mysqli_fetch_row($result)){
+                    echo "<li><a href=\"#\">$categories[0]</a></li>";
+                }
+
+//                var_dump($categories);
+
+//                foreach($categories as $name => $values){
+//                    echo "<li><a href=\"#\">$values</a></li>";
+//                }
+//                ?>
+<!--                <li><a href="#">C#</a></li>-->
+<!--                <li><a href="#">JAVA</a></li>-->
+<!--                <li><a href="#">HTML 5</a></li>-->
+<!--                <li><a href="#">JAVASCRIPT</a></li>-->
+<!--                <li><a href="#">PHP</a></li>-->
             </ul>
         </div>
     </nav>
