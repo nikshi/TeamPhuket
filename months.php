@@ -21,7 +21,7 @@
             if ($postCount > 0):
                 $monthName = date('F', mktime(0, 0, 0, $month, 10));
                 ?>
-        <li><a href="view.php?<?php echo "month=$month&year=$year" ?>"><?php echo "$monthName $year ($postCount)" ?></a></li>
+        <li><a href="view.php?<?php echo "query=month&month=$month&year=$year" ?>"><?php echo "$monthName $year ($postCount)" ?></a></li>
 
         <?php endif;
             $month-- ;

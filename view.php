@@ -4,12 +4,22 @@ require 'header.php';
 <main>
     <div id="main-content">
         <?php
-        $month = $_GET['month'];
-        $year = $_GET['year'];
 
-        $monthQuery = "SELECT * FROM posts WHERE MONTH(date) = $month AND YEAR(date) = $year";
-        $arr = $con->query($monthQuery);
-        $posts = $arr->fetch_all();
+        $queryType = $_GET['query'];
+
+        if ($queryType == 'month') {
+            $month = $_GET['month'];
+            $year = $_GET['year'];
+
+            $queryType = "SELECT * FROM posts WHERE MONTH(date) = $month AND YEAR(date) = $year";
+            $arr = $con->query($queryType);
+            $posts = $arr->fetch_all();
+        } else if ($queryType == 'post') {
+            $id = $_GET['id'];
+            $queryType = "SELECT * FROM posts WHERE id = $id";
+            $arr = $con->query($queryType);
+            $posts = $arr->fetch_all();
+        }
 
 
         function getUserIP() {
@@ -37,15 +47,16 @@ require 'header.php';
 
             $viewQuery = $con->query("SELECT ip FROM views WHERE post_id = $postID")->fetch_all();
             $totalViews = count($viewQuery);
+            $uniqueIPS = array();
 
             foreach ($viewQuery as $view) {
-                $uniqueViews[] = $view[0];
+                $uniqueIPS[] = $view[0];
             }
-            $uniqueViews = count(array_unique($uniqueViews));
+            $uniqueViews = count(array_unique($uniqueIPS));
             ?>
 
             <article>
-                <h1><?php echo $post[2] ?></h1>
+                <a href="view.php?query=post&id=<?php echo $post[0] ?>"><h1><?php echo $post[2] ?></h1></a>
                 <p id="date-and-user"><?php echo $post[1] ?> | Posted by: <?php echo $userName ?> | Comments: 2</p>
                 <p id="article-text"><?php echo $post[3] ?></p>
                 <p id="view-data">Total views: <?php echo $totalViews ?> | Unique views: <?php echo $uniqueViews ?></p>
