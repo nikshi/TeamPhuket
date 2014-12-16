@@ -49,35 +49,40 @@ foreach ($posts as $post):
         $uniqueIPS[] = $view[0];
     }
     $uniqueViews = count(array_unique($uniqueIPS));
+
+    $commentQuery = "SELECT * FROM comments WHERE post_id = $post[0]";
+    $comments = $con->query($commentQuery)->fetch_all();
+
     ?>
 
     <article>
         <a href="view.php?query=post&id=<?php echo $post[0] ?>"><h1><?php echo $post[2] ?></h1></a>
-        <p class="date-and-user"><?php echo $post[1] ?> | Posted by: <?php echo $userName ?> | Comments: 2 | Total views: <?php echo $totalViews ?> | Unique views: <?php echo $uniqueViews ?></p>
+        <p class="date-and-user">Posted by: <?php echo $userName ?> | <?php echo $post[1] ?> | Comments: <?php echo count($comments) ?> | Total views: <?php echo $totalViews ?> | Unique views: <?php echo $uniqueViews ?></p>
 
         <div class="article-text"><?php echo $post[3] ?></div>
-
-
-
         <div class="comments">
             <h4>Comments:</h4>
-            <p class="date-and-user">Bai Ivan | 12.12.2014 22:12</p>
-            <p class="article-text-small">This is a comment from Bai Ivan</p>
-
+            <?php
+            foreach ($comments as $comment):
+                ?>
+                <p class="date-and-user">By: <?php echo $comment[1] ?> | Date: <?php echo $comment[2] ?></p>
+                <div class="comment-text"><p><?php echo $comment[3] ?></p></div>
+            <?php endforeach ?>
         </div>
 
-        <form method="get" action="#" class="commentForm">
+        <form method="get" action="php/savecomment.php" class="commentForm">
             <h4>Write a comment:</h4>
+            <input type="hidden" name="post-id" value="<?php echo $post[0] ?>">
             <div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span> </span>
-                <input type="text" class="form-control" placeholder="Your Name">
+                <input type="text" class="form-control" placeholder="Your Name" name="comment-name">
             </div>
             <div class="input-group">
                 <span class="input-group-addon">@</span>
-                <input type="text" class="form-control" placeholder="Your E-mail">
+                <input type="text" class="form-control" placeholder="Your E-mail" name="comment-email">
             </div>
-            <textarea class="form-control" rows="3" placeholder="Write your comment here...."></textarea>
-            <input class="btn btn-default submitBtn" type="submit" value="Submit">
+            <textarea class="form-control" name="comment-content" rows="3" placeholder="Write your comment here...."></textarea>
+            <input class="btn btn-default submitBtn" type="submit" value="Submit" name="comment-submit">
         </form>
     </article>
 
