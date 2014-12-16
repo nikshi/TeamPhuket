@@ -43,7 +43,6 @@ foreach ($posts as $post):
 
     $commentQuery = "SELECT * FROM comments WHERE post_id = $post[0]";
     $comments = $con->query($commentQuery)->fetch_all();
-
     ?>
 
     <article>
