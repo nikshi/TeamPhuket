@@ -53,25 +53,21 @@ foreach ($posts as $post):
 
     <article>
         <a href="view.php?query=post&id=<?php echo $post[0] ?>"><h1><?php echo $post[2] ?></h1></a>
-        <p id="date-and-user"><?php echo $post[1] ?> | Posted by: <?php echo $userName ?> | Comments: 2</p>
-        <p id="article-text"><?php echo $post[3] ?></p>
-        <p id="view-data">Total views: <?php echo $totalViews ?> | Unique views: <?php echo $uniqueViews ?></p>
+        <p class="date-and-user"><?php echo $post[1] ?> | Posted by: <?php echo $userName ?> | Comments: 2 | Total views: <?php echo $totalViews ?> | Unique views: <?php echo $uniqueViews ?></p>
+
+        <div class="article-text"><?php echo $post[3] ?></div>
 
 
-        <div id="comments">
-            <p>Bai Ivan | 12.12.2014 22:12</p>
-            <p>This is a comment from Bai Ivan</p>
-            <hr />
-            <p>Bai Ivan | 12.12.2014 22:12</p>
-            <p>This is a comment from Bai Ivan</p>
-            <hr />
-            <p>Bai Ivan | 12.12.2014 22:12</p>
-            <p>This is a comment from Bai Ivan</p>
-            <hr />
+
+        <div class="comments">
+            <h4>Comments:</h4>
+            <p class="date-and-user">Bai Ivan | 12.12.2014 22:12</p>
+            <p class="article-text-small">This is a comment from Bai Ivan</p>
+
         </div>
 
-
         <form method="get" action="#" class="commentForm">
+            <h4>Write a comment:</h4>
             <div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span> </span>
                 <input type="text" class="form-control" placeholder="Your Name">
