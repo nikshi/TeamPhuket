@@ -7,7 +7,7 @@ if (isset($_GET['submit'])) {
     $post = $_GET['editor1'];
     $userID = $_SESSION['loggedUserID'];
     $tags = $_GET['tags'];
-    $category = $_GET['cat'];
+    $category = $_GET['category'];
     $tagsArr = explode(", ", $tags);
 
     $sql = "INSERT INTO posts (title, text, user_id, category) VALUES ('$title', '$post', '$userID', '$category')";
