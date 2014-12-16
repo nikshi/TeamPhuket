@@ -11,6 +11,8 @@
             $title = $row['title'];
             $date = $row['date'];
             $id = $row['id'];
+            var_dump($row);
+            die;
             ?>
             <li><a href="view.php?query=post&id=<?php echo $id ?>"><?php echo $title?><br> <?php echo $date?> <br> in JAVASCRIPT</a></li>
         <?php } ?>
