@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 16, 2014 at 09:33 PM
+-- Generation Time: Dec 16, 2014 at 10:55 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `comment` text NOT NULL,
   `post_id` int(5) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `comments`
@@ -63,7 +63,9 @@ CREATE TABLE IF NOT EXISTS `comments` (
 INSERT INTO `comments` (`id`, `name`, `date`, `comment`, `post_id`) VALUES
 (1, 'Fil', '2014-12-16 19:51:42', 'veererbertbnr', 7),
 (7, 'Бат Сали', '2014-12-16 20:07:14', 'Я да видиме...', 7),
-(8, 'Бат Сали', '2014-12-16 20:07:14', 'Я да видиме...', 7);
+(8, 'Бат Сали', '2014-12-16 20:07:14', 'Я да видиме...', 7),
+(9, 'Damn', '2014-12-16 21:20:59', 'We good!', 1),
+(10, 'Damn', '2014-12-16 21:20:59', 'We good!', 1);
 
 -- --------------------------------------------------------
 
@@ -76,18 +78,20 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `title` varchar(500) NOT NULL,
   `text` text NOT NULL,
-  `user_id` int(5) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+  `user_id` int(5) NOT NULL,
+  `category` int(50) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `posts`
 --
 
-INSERT INTO `posts` (`id`, `date`, `title`, `text`, `user_id`) VALUES
-(1, '2014-12-15 10:08:58', 'Creating A Bitwise Mask Of Unknown Length', '<p>There are 3 ways to do this (as far as I know).</p>\r\n', 1),
-(4, '2014-12-15 16:04:35', 'Flipping a bit on a given position', '<p>Formula: number ^= 1 &lt;&lt; position</p>\r\n', 1),
-(5, '2014-11-12 16:05:26', 'Gambling - solution', '<p>Here is the....</p>\r\n', 1),
-(7, '2014-02-06 21:45:28', 'Trying out the tags functionality', '<p>This is my textarea to be replaced with CKEditor.</p>\r\n', 1);
+INSERT INTO `posts` (`id`, `date`, `title`, `text`, `user_id`, `category`) VALUES
+(1, '2014-12-15 10:08:58', 'Creating A Bitwise Mask Of Unknown Length', '<p>There are 3 ways to do this (as far as I know).</p>\r\n', 1, 3),
+(4, '2014-12-15 16:04:35', 'Flipping a bit on a given position', '<p>Formula: number ^= 1 &lt;&lt; position</p>\r\n', 1, 3),
+(5, '2014-11-12 16:05:26', 'Gambling - solution', '<p>Here is the....</p>\r\n', 1, 2),
+(7, '2014-02-06 21:45:28', 'Trying out the tags functionality', '<p>This is my textarea to be replaced with CKEditor.</p>\r\n', 1, 1),
+(10, '2014-12-16 22:46:02', 'Checking if categories work', '<p>This is my textarea to be replaced with CKEditor.</p>\r\n', 1, 4);
 
 -- --------------------------------------------------------
 
@@ -134,7 +138,23 @@ INSERT INTO `tags` (`tags`, `post_id`) VALUES
 ('exam', 6),
 ('solution', 6),
 ('exam', 8),
-('solution', 8);
+('solution', 8),
+('programming', 10),
+('bitwise', 10),
+('useful', 10),
+('programming', 12),
+('bitwise', 12),
+('useful', 12),
+('person', 14),
+('free time', 14),
+('love', 14),
+('peace', 14),
+('protest', 14),
+('person', 16),
+('free time', 16),
+('love', 16),
+('peace', 16),
+('protest', 16);
 
 -- --------------------------------------------------------
 
@@ -505,17 +525,209 @@ INSERT INTO `views` (`post_id`, `ip`) VALUES
 (1, '::1'),
 (4, '::1'),
 (5, '::1'),
-(7, '::1');
+(7, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(11, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(11, '::1'),
+(12, '::1'),
+(13, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(12, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(12, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(12, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(12, '::1'),
+(14, '::1'),
+(15, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(12, '::1'),
+(14, '::1'),
+(15, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(12, '::1'),
+(14, '::1'),
+(15, '::1'),
+(16, '::1'),
+(17, '::1'),
+(7, '::1'),
+(1, '::1'),
+(4, '::1'),
+(10, '::1'),
+(12, '::1'),
+(14, '::1'),
+(15, '::1'),
+(16, '::1'),
+(17, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(12, '::1'),
+(14, '::1'),
+(15, '::1'),
+(16, '::1'),
+(17, '::1'),
+(5, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(12, '::1'),
+(14, '::1'),
+(15, '::1'),
+(16, '::1'),
+(17, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(12, '::1'),
+(14, '::1'),
+(15, '::1'),
+(16, '::1'),
+(17, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(12, '::1'),
+(14, '::1'),
+(15, '::1'),
+(16, '::1'),
+(17, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(12, '::1'),
+(14, '::1'),
+(15, '::1'),
+(16, '::1'),
+(17, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(12, '::1'),
+(14, '::1'),
+(15, '::1'),
+(16, '::1'),
+(17, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(12, '::1'),
+(14, '::1'),
+(15, '::1'),
+(16, '::1'),
+(17, '::1'),
+(12, '::1'),
+(10, '::1'),
+(10, '::1'),
+(10, '::1'),
+(12, '::1'),
+(7, '::1'),
+(5, '::1'),
+(4, '::1'),
+(10, '::1'),
+(1, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(7, '::1'),
+(1, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(10, '::1'),
+(10, '::1'),
+(5, '::1'),
+(1, '::1'),
+(10, '::1'),
+(4, '::1'),
+(5, '::1'),
+(7, '::1'),
+(1, '::1'),
+(1, '::1'),
+(5, '::1'),
+(1, '::1'),
+(4, '::1'),
+(10, '::1'),
+(10, '::1'),
+(1, '::1'),
+(4, '::1');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `categories`
---
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `comments`
@@ -543,12 +755,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `users`
 --
