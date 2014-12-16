@@ -58,8 +58,6 @@ session_start();
                 while($categories = mysqli_fetch_row($result)){
                     echo "<li><a href=\"view.php?query=category&cat=$categories[0]\">$categories[1]</a></li>";
                 }
-
-
                 ?>
             </ul>
         </div>
