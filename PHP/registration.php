@@ -11,16 +11,16 @@ if (isset($_POST['submit'])){
 
     $password = hash('sha256', $password);
 
-    $query = "SELECT id FROM `users` WHERE username = '$username' LIMIT 1";
+    $query = "SELECT id FROM users WHERE username = '$username' LIMIT 1";
     $userResult = mysqli_query($con, $query);
 
-    $query = "SELECT id FROM `users` WHERE email = '$email' LIMIT 1";
+    $query = "SELECT id FROM users WHERE email = '$email' LIMIT 1";
     $emailResult = mysqli_query($con, $query);
 
     if (($userResult->num_rows != 0) || ($emailResult->num_rows != 0)){
         echo "User already registered";
     }else{
-        $query = "INSERT INTO `users` (name, username, email, password, city, country)
+        $query = "INSERT INTO users (name, username, email, password, city, country)
             VALUES('$name', '$username', '$email', '$password', '$city', '$country')";
 
         if (mysqli_query($con, $query) == true){

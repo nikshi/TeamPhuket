@@ -11,10 +11,14 @@ require 'header.php';;
         $arr = $con->query($monthQuery);
         $posts = $arr->fetch_all();
 
-        foreach ($posts as $post): ?>
+        foreach ($posts as $post):
+            $userID = $post[4];
+            $userName = $con->query("SELECT username FROM users WHERE id = $userID")->fetch_all()[0][0];
+            ;?>
+
             <article>
                 <h1><?php echo $post[2] ?></h1>
-                <p id="date-and-user"><?php echo $post[1] ?> | Posted by: Admin | Hints: 32 | Comments: 2</p>
+                <p id="date-and-user"><?php echo $post[1] ?> | Posted by: <?php echo $userName ?> | Comments: 2</p>
                 <p id="article-text"><?php echo $post[3] ?></p>
                 <div id="comments">
                     <p>Bai Ivan | 12.12.2014 22:12</p>
