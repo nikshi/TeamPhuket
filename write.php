@@ -2,7 +2,7 @@
     <h1>Write post</h1>
     <input name="title" type="text" id="name" class="user-write" placeholder="Write a title of article"/>
     <label> Select Category: </label>
-    <select class="form-control" name="category">
+    <select class="form-control dropdown-category" name="category">
         <?php
         $sql = "SELECT * FROM categories";
         $result = mysqli_query($con, $sql);
