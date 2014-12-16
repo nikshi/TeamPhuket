@@ -34,6 +34,12 @@ function getUserIP() {
 
 $ip = getUserIP();
 
+if (count($posts) == 0): ?>
+   <h2><?php  echo "No posts match your choice!"; ?></h2>
+
+<?php
+endif;
+
 foreach ($posts as $post):
     $userID = $post[4];
     $userName = $con->query("SELECT username FROM users WHERE id = $userID")->fetch_all()[0][0];
@@ -54,6 +60,8 @@ foreach ($posts as $post):
     $comments = $con->query($commentQuery)->fetch_all();
 
     ?>
+
+
 
     <article>
         <a href="view.php?query=post&id=<?php echo $post[0] ?>"><h1><?php echo $post[2] ?></h1></a>
@@ -86,4 +94,6 @@ foreach ($posts as $post):
         </form>
     </article>
 
-<?php endforeach ?>
+<?php endforeach
+
+?>
