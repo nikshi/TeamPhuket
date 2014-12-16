@@ -26,8 +26,6 @@
         else {
             return "13px";
         }
-
-
     }
     ?>
 </div>

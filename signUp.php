@@ -4,8 +4,7 @@
     <label for="name">Name</label>
     <input name="name" type="text" id="name" class="user" placeholder="e.g. John Doe"/>
 
-    <label
-        for="username">Username &emsp;
+    <label for="username">Username &emsp;
         <span id="user-length">/Username must have only one word/</span>
         <span id="userCharacter-length">/Username must have at least 3 characters/</span>
     </label>

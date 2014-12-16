@@ -16,15 +16,15 @@ if(isset($_SESSION['loggedUser'])) :
             <h3>Sorry, but you must be logged in to write a post!</h3>
         </div>
         <?php endif; ?>
-    <aside id="right-write-post">
-        <?php
-        include 'lastposts.php';
-        include 'months.php';
-        include 'tags.php';
-        ?>
-    </aside>
-</main>
-<?php
-include 'footer.php';
-?>
+        <aside id="right-write-post">
+            <?php
+            include 'lastposts.php';
+            include 'months.php';
+            include 'tags.php';
+            ?>
+        </aside>
+    </main>
+    <?php
+    include 'footer.php';
+    ?>
 

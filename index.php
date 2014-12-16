@@ -14,7 +14,6 @@ require 'header.php';;
         include 'months.php';
         include 'tags.php';
         ?>
-
     </aside>
 </main>
 <?php

@@ -3,7 +3,6 @@
 if ($queryType == 'month') {
     $month = $_GET['month'];
     $year = $_GET['year'];
-
     $queryType = "SELECT * FROM posts WHERE MONTH(date) = $month AND YEAR(date) = $year";
 } else if ($queryType == 'post') {
     $id = $_GET['id'];
@@ -17,33 +16,19 @@ if ($queryType == 'month') {
 
 $arr = $con->query($queryType);
 $posts = $arr->fetch_all();
-
-function getUserIP() {
-    if( array_key_exists('HTTP_X_FORWARDED_FOR', $_SERVER) && !empty($_SERVER['HTTP_X_FORWARDED_FOR']) ) {
-        if (strpos($_SERVER['HTTP_X_FORWARDED_FOR'], ',')>0) {
-            $addr = explode(",",$_SERVER['HTTP_X_FORWARDED_FOR']);
-            return trim($addr[0]);
-        } else {
-            return $_SERVER['HTTP_X_FORWARDED_FOR'];
-        }
-    }
-    else {
-        return $_SERVER['REMOTE_ADDR'];
-    }
-}
-
+require 'ip-check.php';
 $ip = getUserIP();
 
 if (count($posts) == 0): ?>
    <h2><?php  echo "No posts match your choice!"; ?></h2>
 
-<?php
-endif;
+<?php endif;
 
 foreach ($posts as $post):
     $userID = $post[4];
     $userName = $con->query("SELECT username FROM users WHERE id = $userID")->fetch_all()[0][0];
     $postID = $post[0];
+
     $query = "INSERT INTO views (post_id, ip) VALUES ('$postID', '$ip')";
     mysqli_query($con, $query);
 
@@ -61,8 +46,6 @@ foreach ($posts as $post):
 
     ?>
 
-
-
     <article>
         <a href="view.php?query=post&id=<?php echo $post[0] ?>"><h1><?php echo $post[2] ?></h1></a>
         <p class="date-and-user">Posted by: <?php echo $userName ?> | <?php echo $post[1] ?> | Comments: <?php echo count($comments) ?> | Total views: <?php echo $totalViews ?> | Unique views: <?php echo $uniqueViews ?></p>
@@ -71,8 +54,7 @@ foreach ($posts as $post):
         <div class="comments">
             <h4>Comments:</h4>
             <?php
-            foreach ($comments as $comment):
-                ?>
+            foreach ($comments as $comment): ?>
                 <p class="date-and-user">By: <?php echo $comment[1] ?> | Date: <?php echo $comment[2] ?></p>
                 <div class="comment-text"><p><?php echo $comment[3] ?></p></div>
             <?php endforeach ?>
@@ -94,6 +76,4 @@ foreach ($posts as $post):
         </form>
     </article>
 
-<?php endforeach
-
-?>
+<?php endforeach ?>

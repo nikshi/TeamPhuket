@@ -55,12 +55,13 @@ session_start();
                 <?php
                 $sql = "SELECT * FROM categories";
                 $result = mysqli_query($con, $sql);
-                while($categories = mysqli_fetch_row($result)){
-                    echo "<li><a href=\"view.php?query=category&cat=$categories[0]\">$categories[1]</a></li>";
-                }
+                while($categories = mysqli_fetch_row($result)): ?>
+                    <li><a href="view.php?query=category&cat="<?php echo $categories[0]?>"><?php echo $categories[1] ?></a></li>
+                    <?php
+                endwhile;
                 ?>
             </ul>
         </div>
     </nav>
-    <p class="logo"><a href="index.php">Phunket's Team Blog</a></p>
+    <p class="logo"><a href="index.php">Phuket's Team Blog</a></p>
 </header>
