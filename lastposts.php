@@ -1,7 +1,7 @@
 <div class="post-lists">
     <form action="" method="GET">
         <input type="search" name="search" id="search-input" placeholder="Search..."/>
-        <button type="submit" class="search-button"></button>
+        <input type="submit" class="search-button" value=""/>
     </form>
     <h2>Last posts</h2>
     <ul class="nav nav-tabs">
