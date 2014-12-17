@@ -185,7 +185,7 @@ article h1 {
 }
 
 .commentForm {
-    margin-bottom: 150px;
+    margin: 20px 0 120px 0;
     width: 75%;
     border-top: 2px solid #000000;
 }

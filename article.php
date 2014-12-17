@@ -47,19 +47,25 @@ foreach ($posts as $post):
 
     <article>
         <a href="view.php?query=post&id=<?php echo $post[0] ?>"><h1><?php echo $post[2] ?></h1></a>
-        <p class="date-and-user">Posted by: <?php echo $userName ?> | <?php echo $post[1] ?> | Comments: <?php echo count($comments) ?> | Total views: <?php echo $totalViews ?> | Unique views: <?php echo $uniqueViews ?></p>
+        <p class="date-and-user">Posted by: <?php echo $userName ?> | <?php echo $post[1] ?> | Total views: <?php echo $totalViews ?> | Unique views: <?php echo $uniqueViews ?></p>
 
         <div class="article-text"><?php echo $post[3] ?></div>
         <div class="comments">
-            <h4>Comments:</h4>
+            <h4>Comments (<?php echo count($comments) ?>): </h4>
             <?php
-            foreach ($comments as $comment): ?>
-                <p class="date-and-user">By: <?php echo $comment[1] ?> | Date: <?php echo $comment[2] ?></p>
-                <div class="comment-text"><p><?php echo $comment[3] ?></p></div>
-            <?php endforeach ?>
+            if (count($comments) == 0): ?>
+            <div class="comment-text"><p><?php echo "Be the first to leave a comment!" ?></p></div>
+            <?php else:
+                foreach ($comments as $comment): ?>
+                    <p class="date-and-user">By: <?php echo $comment[1] ?> | Date: <?php echo $comment[2] ?></p>
+                    <div class="comment-text"><p><?php echo $comment[3] ?></p></div>
+                <?php endforeach;
+            endif; ?>
         </div>
 
-        <form method="get" action="php/savecomment.php" class="commentForm">
+        <button onclick="showCommentForm(<?php echo $post[0]?>)" id="btn-<?php echo $post[0]?>">Write a comment</button>
+
+        <form method="get" action="php/savecomment.php" class="commentForm" id="comment-form-<?php echo $post[0]?>" style="display:none;">
             <h4>Write a comment:</h4>
             <input type="hidden" name="post-id" value="<?php echo $post[0] ?>">
             <div class="input-group">
@@ -73,6 +79,7 @@ foreach ($posts as $post):
             <textarea class="form-control" name="comment-content" rows="3" placeholder="Write your comment here...."></textarea>
             <input class="btn btn-default submitBtn" type="submit" value="Submit" name="comment-submit">
         </form>
+
     </article>
 
 <?php endforeach ?>
