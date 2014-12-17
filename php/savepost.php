@@ -11,7 +11,7 @@ if (isset($_GET['submit'])) {
     $tagsArr = explode(", ", $tags);
 
     $sql = "INSERT INTO posts (title, text, user_id, category) VALUES ('$title', '$post', '$userID', '$category')";
-    mysqli_query($con, $sql);
+//    mysqli_query($con, $sql);
     $postID = mysqli_insert_id($con);
 
     foreach($tagsArr as $t){
@@ -20,7 +20,8 @@ if (isset($_GET['submit'])) {
     }
 
     if ($con->query($sql) === TRUE) {
-        echo "New record created successfully";
+        $id = mysqli_insert_id($con);
+        header("Location: ../view.php?query=post&id=$id");
     } else {
         echo "Error: " . $sql . "<br>" . $con->error;
     }

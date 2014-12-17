@@ -8,7 +8,6 @@ if (isset($_GET['comment-submit'])) {
     $post = $_GET['post-id'];
 
     $sql = "INSERT INTO comments (name, comment, post_id) VALUES ('$name', '$comment', $post)";
-    mysqli_query($con, $sql);
     $postID = mysqli_insert_id($con);
 
     if ($con->query($sql) === TRUE) {
