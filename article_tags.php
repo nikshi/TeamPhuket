@@ -14,7 +14,6 @@ $tagList = $tagList->fetch_all(); ?>
     } else {
         echo " (no tags for this post)";
     }
-
     ?>
 </div>
 
