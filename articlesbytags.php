@@ -20,7 +20,7 @@ if(isset($_GET['tag'])) {
 
         <ul>
 </article>
-        <?php
+<?php
         endwhile;
     endwhile;
 ?>

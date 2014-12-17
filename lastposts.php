@@ -1,5 +1,5 @@
 <div class="post-lists">
-    <form action="" method="GET">
+    <form action="viewSearch.php" method="GET">
         <input type="search" name="search" id="search-input" placeholder="Search..."/>
         <input type="submit" class="search-button" value=""/>
     </form>
