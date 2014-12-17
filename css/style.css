@@ -96,7 +96,7 @@ aside {
 
     aside h2 {
         font-weight: bold;
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         font-family: 'Cuprum', sans-serif;
         color: #2c91bb;
         margin-bottom: 15px;
@@ -291,3 +291,15 @@ footer {
     margin: 10px 0;
 }
 
+.title{
+    font-size: 20px;
+}
+
+.date{
+    font-style: italic;
+    color: rgba(67, 67, 67, 0.72);
+}
+
+.category{
+    color: #434343;
+}

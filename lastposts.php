@@ -19,7 +19,12 @@
             $category = $con->query("SELECT name FROM categories WHERE id = $cat")->fetch_all()[0][0];
 
             ?>
-            <li><a href="view.php?query=post&id=<?php echo $id ?>"><?php echo $title?><br> <?php echo $date?> <br>in <?php echo $category?></a></li>
+            <li><a href="view.php?query=post&id=<?php echo $id ?>">
+                    <span class="title"><?php echo $title?></span><br>
+                    <span class="date"><?php echo $date?></span> <br>
+                    <span class="category">in <?php echo $category?></span>
+                </a>
+            </li>
         <?php } ?>
     </ul>
 </div>
