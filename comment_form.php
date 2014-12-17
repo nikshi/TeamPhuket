@@ -9,6 +9,6 @@
         <span class="input-group-addon">@</span>
         <input type="text" class="form-control" placeholder="Your E-mail" name="comment-email">
     </div>
-    <textarea class="form-control" name="comment-content" rows="3" placeholder="Write your comment here...." required="required" pattern=".{3,}" title="At least 3 characters!"></textarea>
+    <textarea class="form-control" name="comment-content" rows="3" placeholder="Write your comment here...." required="required" title="At least 3 characters!"></textarea>
     <input class="btn btn-default submitBtn" type="submit" value="Submit" name="comment-submit">
 </form>

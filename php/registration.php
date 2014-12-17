@@ -8,6 +8,9 @@ if (isset($_POST['submit'])){
     $password = mysqli_real_escape_string($con, $_POST['password']);
     $city = mysqli_real_escape_string($con, $_POST['city']);
     $country = mysqli_real_escape_string($con, $_POST['country']);
+
+    require '../validations.php';
+
     $password = hash('sha256', $password);
 
     $query = "SELECT id FROM users WHERE username = '$username' LIMIT 1";
@@ -16,7 +19,17 @@ if (isset($_POST['submit'])){
     $emailResult = mysqli_query($con, $query);
 
     if (($userResult->num_rows != 0) || ($emailResult->num_rows != 0)){
-        echo "User already registered";
+        echo "User already registered"; ?>
+        <br>
+        <br>
+        <a href="../registration.php">Go Back</a>
+    <?php
+    } else if (validateRegistrationData() == false) {
+        echo "Data did not match requirements. Please retry."; ?>
+        <br>
+        <br>
+        <a href="../registration.php">Go Back</a>
+    <?php
     } else {
         $query = "INSERT INTO users (name, username, email, password, city, country) VALUES('$name', '$username', '$email', '$password', '$city', '$country')";
 
@@ -24,7 +37,11 @@ if (isset($_POST['submit'])){
             header('Location: ../index.php');
         } else {
             echo mysqli_error($query);
-            echo 'ERROR';
+            echo 'ERROR'; ?>
+            <br>
+            <br>
+            <a href="../registration.php">Go Back</a>
+        <?php
         }
     }
 }

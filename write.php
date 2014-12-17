@@ -1,6 +1,6 @@
 <form method="get" action="php/savepost.php" class="singup">
     <h1>Write post</h1>
-    <input name="title" type="text" id="name" class="user-write" placeholder="Write a title of article"/>
+    <input name="title" type="text" id="name" class="user-write" placeholder="Your title" required="required" pattern=".{3,}" title="At least 3 characters!"/>
     <label> Select Category: </label>
     <select class="form-control dropdown-category" name="category">
         <?php
@@ -11,7 +11,7 @@
         }
         ?>
     </select>
-    <textarea name="editor1" id="editor1" rows="10" cols="80" required="required">
+    <textarea name="editor1" id="editor1" rows="10" cols="80" required="required" pattern=".{3,}" title="At least 3 characters!">
         Enter text...
     </textarea>
     <script>
