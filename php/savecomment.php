@@ -11,7 +11,7 @@ if (isset($_GET['comment-submit'])) {
     $postID = mysqli_insert_id($con);
 
     if ($con->query($sql) === TRUE) {
-        echo "New record created successfully";
+        header("Location: ../view.php?query=post&id=$post");
     } else {
         echo "Error: " . $sql . "<br>" . $con->error;
     }

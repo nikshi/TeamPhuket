@@ -11,10 +11,11 @@
             $title = $row['title'];
             $date = $row['date'];
             $id = $row['id'];
-            var_dump($row);
-            die;
+            $cat = $row['category'];
+            $category = $con->query("SELECT name FROM categories WHERE id = $cat")->fetch_all()[0][0];
+
             ?>
-            <li><a href="view.php?query=post&id=<?php echo $id ?>"><?php echo $title?><br> <?php echo $date?> <br> in JAVASCRIPT</a></li>
+            <li><a href="view.php?query=post&id=<?php echo $id ?>"><?php echo $title?><br> <?php echo $date?> <br><?php echo $category?></a></li>
         <?php } ?>
     </ul>
 </div>
