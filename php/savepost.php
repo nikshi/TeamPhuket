@@ -11,15 +11,15 @@ if (isset($_GET['submit'])) {
     $tagsArr = explode(", ", $tags);
 
     $sql = "INSERT INTO posts (title, text, user_id, category) VALUES ('$title', '$post', '$userID', '$category')";
-    $postID = mysqli_insert_id($con);
-
+    $con->query($sql);
+    $id = mysqli_insert_id($con);
     foreach($tagsArr as $t){
-    $tag = "INSERT INTO tags (tags, post_id) VALUES ('$t', '$postID')";
+    $tag = "INSERT INTO tags (tags, post_id) VALUES ('$t', '$id')";
         mysqli_query($con, $tag);
     }
 
-    if ($con->query($sql) === TRUE) {
-        $id = mysqli_insert_id($con);
+    if ($id != 0) {
+
         header("Location: ../view.php?query=post&id=$id");
 
     } else {

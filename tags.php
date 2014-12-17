@@ -8,8 +8,10 @@
         $sqlCount = "SELECT * FROM tags WHERE tags ='$tag[tags]'";
         $resCount = mysqli_query($con, $sqlCount);
         $count = mysqli_num_rows($resCount);
-        echo "<a href=\"#\" style=\"font-size: ".tagSize($count)."\">  $tag[tags]($count),  </a>";
+        echo "<a href=\"viewbytags.php?tag=$tag[tags]\" style=\"font-size: ".tagSize($count)."\">  $tag[tags]($count),  </a>";
     }
+
+
     function tagSize($count) {
         if($count > 5) {
             return "18px";
