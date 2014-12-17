@@ -184,6 +184,10 @@ article h1 {
     float: right;
 }
 
+.tag-info {
+    margin-top: 75px ;
+}
+
 .commentForm {
     margin: 20px 0 120px 0;
     width: 75%;
@@ -191,7 +195,7 @@ article h1 {
 }
 
 .comments {
-    margin: 100px 0 30px 0;
+    margin: 30px 0 30px 0;
     border-top: 2px solid #000000;
     width: 75%;
 }

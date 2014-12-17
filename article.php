@@ -9,7 +9,7 @@ require 'ip-check.php';
 $ip = getUserIP();
 
 if (count($posts) == 0): ?>
-   <h2><?php  echo "No posts match your choice!"; ?></h2>
+    <h2><?php  echo "No posts match your choice!"; ?></h2>
 
 <?php endif;
 foreach ($posts as $post):
@@ -38,7 +38,9 @@ foreach ($posts as $post):
         <p class="date-and-user">Posted by: <?php echo $userName ?> | <?php echo $post[1] ?> | Total views: <?php echo $totalViews ?> | Unique views: <?php echo $uniqueViews ?></p>
 
         <div class="article-text"><?php echo $post[3] ?></div>
-        <?php require 'comments.php' ?>
+        <?php
+        require 'article_tags.php';
+        require 'comments.php' ?>
 
         <button onclick="showCommentForm(<?php echo $post[0]?>)" id="btn-<?php echo $post[0]?>">Write a comment</button>
 
