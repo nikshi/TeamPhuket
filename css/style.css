@@ -185,7 +185,7 @@ article h1 {
 }
 
 .commentForm {
-    margin-bottom: 150px;
+    margin: 20px 0 120px 0;
     width: 75%;
     border-top: 2px solid #000000;
 }
@@ -231,7 +231,7 @@ footer {
 /*reset bootstrap*/
 .nav>li>a {
     position: relative;
-    /*padding: 0 0;*/
+    padding: 0 0;
 }
 .nav-tabs>li>a {
     margin-right: 2px;
@@ -241,3 +241,53 @@ footer {
     margin-left: 45px;
     margin-bottom: 10px;
 }
+
+#search-input{
+    border: 1px solid #204160;
+    border-right: none;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    width: 60%;
+    height: 28px;
+    margin-top: 8%;
+    padding-left: 2%;
+}
+
+.search-button{
+    float: right;
+    width: 32px;
+    height: 28px;
+    margin-top: 2%;
+    position: absolute;
+    border: 1px solid #204160;
+    border-left: 1px solid gray;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    background-image: url("../images/search.png");
+}
+.older-posts, .newer-posts {
+    display: inline-block;
+    width: 50%;
+    font-size: 1.5rem;
+}
+
+.older-posts {
+    float: right;
+    text-align: right;
+}
+
+.newer-posts {
+    float: left;
+}
+
+.page-count {
+    font-size: 1.25rem;
+    text-align: center;
+    display: block;
+}
+
+.post-lists  li {
+    float: none;
+    margin: 10px 0;
+}
+

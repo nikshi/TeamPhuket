@@ -91,3 +91,15 @@ $(document).ready(function(){
     });
 
 });
+
+function showCommentForm(id) {
+    var button = document.getElementById('btn-' + id);
+    var form = document.getElementById('comment-form-' + id);
+    if (button.innerHTML == 'Write a comment') {
+        form.removeAttribute('style');
+        button.innerHTML = 'Hide comment form';
+    } else {
+        button.innerHTML = 'Write a comment';
+        form.setAttribute('style', 'display:none;');
+    }
+}
