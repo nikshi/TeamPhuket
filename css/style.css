@@ -231,7 +231,7 @@ footer {
 /*reset bootstrap*/
 .nav>li>a {
     position: relative;
-    /*padding: 0 0;*/
+    padding: 0 0;
 }
 .nav-tabs>li>a {
     margin-right: 2px;
@@ -285,3 +285,9 @@ footer {
     text-align: center;
     display: block;
 }
+
+.post-lists  li {
+    float: none;
+    margin: 10px 0;
+}
+
