@@ -16,8 +16,8 @@ if (isset($_POST['submit'])) {
         $_SESSION['loggedUserID'] =$loggedUser['id'];
         $_SESSION['loggedUserName'] =$loggedUser['name'];
         header('Location: ../index.php');
-        echo 'Logged in';
     } else {
-        echo 'failed';
+
+        header('Location: ../index.php?login=err');
     }
 }

@@ -46,6 +46,11 @@ session_start();
                 <a href="register.php">
                     <button type="button" class="btn btn-default btn-sm ">Register</button>
                 </a>
+                <?php
+        if(isset($_GET['login'])){
+            echo "Please enter correct username and password";
+        }
+            ?>
             </div>
         </form>
     <?php endif; ?>
