@@ -1,6 +1,7 @@
 <?php
 $firstPost = 0;
 $lastPost = 5;
+$originalQuery = $queryType;
 if ($queryType == 'month') {
     $month = $_GET['month'];
     $year = $_GET['year'];
@@ -93,7 +94,9 @@ foreach ($posts as $post):
 
 <?php
 
-endforeach; ?>
+endforeach;
+
+if($originalQuery != 'post') { ?>
 
 <p class="page-count">Showing posts <?php echo ($firstPost + 1) ?> - <?php echo ($lastPost) ?></p>
 
@@ -119,5 +122,7 @@ $posts = $arr->fetch_all();
 
 if (count($posts) != 0): ?>
     <div class="older-posts"><a href="view.php?query=older&first=<?php echo $firstPost?>&last=<?php echo $lastPost ?>">Show older posts &gt;&gt;&gt;</a></div>
-<?php endif; ?>
+<?php endif;
+}
+ ?>
 
