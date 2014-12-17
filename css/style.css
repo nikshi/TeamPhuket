@@ -132,7 +132,7 @@ article h1 {
     display: block;
     width: 95%;
     border-radius: 5px;
-    padding: 10px;
+    padding: 10px 18px;
     border: 1px solid #d3d3d3;
     background-color: linen;
     margin-bottom: 10px;
@@ -321,4 +321,12 @@ footer {
 
 .post-date{
     font-style: italic;
+}
+
+.comment-btn{
+    padding: .3% 1.8%;
+    background: rgb(44, 145, 187);
+    border: 1px solid rgba(255, 133, 0, 0);
+    border-radius: 5px;
+    color: #ffffff;
 }
