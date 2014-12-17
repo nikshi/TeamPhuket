@@ -47,11 +47,11 @@ session_start();
             <div class="login">
                 <div class="input-group input-group-sm loginFields">
                     <span class="input-group-addon">@</span>
-                    <input type="text" class="form-control" name="user" placeholder="Username">
+                    <input type="text" class="form-control" name="user" placeholder="Username" required="required" pattern="[\w]{3,}" title="At least 3 letters or underscores!">
                 </div>
                 <div class="input-group input-group-sm loginFields">
                     <span class="input-group-addon">@</span>
-                    <input type="password" name="password" class="form-control" placeholder="Password">
+                    <input type="password" name="password" class="form-control" placeholder="Password" required="required" pattern=".{4,}" title="At least 4 symbols!">
                 </div>
                 <button type="submit" name="submit" class="btn btn-default btn-sm ">Login</button>
                 <a href="register.php">
