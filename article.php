@@ -1,5 +1,6 @@
 <?php
-
+$firstPost = 0;
+$lastPost = 5;
 if ($queryType == 'month') {
     $month = $_GET['month'];
     $year = $_GET['year'];
@@ -8,14 +9,23 @@ if ($queryType == 'month') {
     $id = $_GET['id'];
     $queryType = "SELECT * FROM posts WHERE id = $id";
 } else if ($queryType == 'all') {
-    $queryType = "SELECT * FROM posts";
+    $queryType = "SELECT * FROM posts ORDER BY date DESC LIMIT 0, 5";
 } else if ($queryType == 'category') {
     $cat = $_GET['cat'];
     $queryType = "SELECT * FROM posts WHERE  category = $cat";
+} else if ($queryType == 'older') {
+    $firstPost = $_GET['first'] + 5;
+    $lastPost = $_GET['last'] + 5;
+    $queryType = "SELECT * FROM posts ORDER BY date DESC LIMIT $firstPost, $lastPost";
+} else if ($queryType == 'newer') {
+    $firstPost = $_GET['first'] - 5;
+    $lastPost = $_GET['last'] - 5;
+    $queryType = "SELECT * FROM posts ORDER BY date DESC LIMIT $firstPost, $lastPost";
 }
 
 $arr = $con->query($queryType);
 $posts = $arr->fetch_all();
+$countPosts = count($posts);
 require 'ip-check.php';
 $ip = getUserIP();
 
@@ -23,7 +33,6 @@ if (count($posts) == 0): ?>
    <h2><?php  echo "No posts match your choice!"; ?></h2>
 
 <?php endif;
-
 foreach ($posts as $post):
     $userID = $post[4];
     $userName = $con->query("SELECT username FROM users WHERE id = $userID")->fetch_all()[0][0];
@@ -82,4 +91,33 @@ foreach ($posts as $post):
 
     </article>
 
-<?php endforeach ?>
+<?php
+
+endforeach; ?>
+
+<p class="page-count">Showing posts <?php echo ($firstPost + 1) ?> - <?php echo ($lastPost) ?></p>
+
+<?php
+
+if ($firstPost != 0):
+$checkFirst = $firstPost - 5;
+$checkLast = $lastPost - 5;
+$queryType = "SELECT * FROM posts ORDER BY date DESC LIMIT $checkFirst, $checkLast";
+$arr = $con->query($queryType);
+$posts = $arr->fetch_all();
+
+if (count($posts) != 0): ?>
+    <div class="newer-posts"><a href="view.php?query=newer&first=<?php echo $firstPost?>&last=<?php echo $lastPost ?>">&lt;&lt;&lt; Show newer posts</a></div>
+<?php endif;
+endif;
+
+$checkFirst = $firstPost + 5;
+$checkLast = $lastPost + 5;
+$queryType = "SELECT * FROM posts ORDER BY date DESC LIMIT $checkFirst, $checkLast";
+$arr = $con->query($queryType);
+$posts = $arr->fetch_all();
+
+if (count($posts) != 0): ?>
+    <div class="older-posts"><a href="view.php?query=older&first=<?php echo $firstPost?>&last=<?php echo $lastPost ?>">Show older posts &gt;&gt;&gt;</a></div>
+<?php endif; ?>
+

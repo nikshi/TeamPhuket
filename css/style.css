@@ -241,3 +241,24 @@ footer {
     margin-left: 45px;
     margin-bottom: 10px;
 }
+
+.older-posts, .newer-posts {
+    display: inline-block;
+    width: 50%;
+    font-size: 1.5rem;
+}
+
+.older-posts {
+    float: right;
+    text-align: right;
+}
+
+.newer-posts {
+    float: left;
+}
+
+.page-count {
+    font-size: 1.25rem;
+    text-align: center;
+    display: block;
+}
