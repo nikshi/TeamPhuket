@@ -19,16 +19,27 @@ session_start();
 <header>
     <?php
     if (isset($_SESSION['loggedUser'])):
+        $userID = $_SESSION['loggedUserID'];
+        $query = "SELECT * FROM `users` WHERE id = '$userID'";
+        $arrUser = $con->query($query);
+
+        while ($row = mysqli_fetch_assoc($arrUser)){
+            $type = $row['type_account'];
+        }
+
         ?>
         <div class="login"><span>Hello, <?php echo $_SESSION['loggedUserName'] ?></span>
             <a href="php/logout.php">
                 <button type="button" class="btn btn-default btn-sm ">Logout</button>
             </a>
+
+        <?php
+        if ($type == 'admin'):?>
             <a href="writepost.php">
                 <button type="button" class="btn btn-default btn-sm ">Write post</button>
             </a>
-        </div>
-
+            </div>
+        <?php endif ?>
     <?php
     else :
         ?>
