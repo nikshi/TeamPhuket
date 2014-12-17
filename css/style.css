@@ -242,6 +242,29 @@ footer {
     margin-bottom: 10px;
 }
 
+#search-input{
+    border: 1px solid #204160;
+    border-right: none;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    width: 60%;
+    height: 28px;
+    margin-top: 8%;
+    padding-left: 2%;
+}
+
+.search-button{
+    float: right;
+    width: 32px;
+    height: 28px;
+    margin-top: 2%;
+    position: absolute;
+    border: 1px solid #204160;
+    border-left: 1px solid gray;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    background-image: url("../images/search.png");
+}
 .older-posts, .newer-posts {
     display: inline-block;
     width: 50%;
