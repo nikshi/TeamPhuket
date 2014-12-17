@@ -55,8 +55,9 @@ session_start();
                 <?php
                 $sql = "SELECT * FROM categories";
                 $result = mysqli_query($con, $sql);
-                while($categories = mysqli_fetch_row($result)): ?>
-                    <li><a href="view.php?query=category&cat="<?php echo $categories[0]?>"><?php echo $categories[1] ?></a></li>
+                while($categories = mysqli_fetch_row($result)):
+                    ?>
+                    <li><a href="view.php?query=category&cat=<?php echo $categories[0] ?>"><?php echo $categories[1] ?></a></li>
                     <?php
                 endwhile;
                 ?>
