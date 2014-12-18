@@ -21,8 +21,6 @@
     <div class="comment-text"><p><?php echo $comment[3] ?></p></div>
     <?php
     if ($type == 'admin'):?>
-        <input type="submit" name="<?php echo $comment[0]?>"/>
-
         <form method="post" action="">
             <button type="submit" name="delete-comment" value="<?php echo $comment[0]?>" onclick="return confirm('Are you sure you want to delete this?')">Delete comment</button>
         </form>
