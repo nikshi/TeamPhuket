@@ -14,7 +14,8 @@ if (count($posts) == 0): ?>
 <?php endif;
 foreach ($posts as $post):
     $userID = $post[4];
-    $userName = $con->query("SELECT username FROM users WHERE id = $userID")->fetch_all()[0][0];
+    $userName = $con->query("SELECT username FROM users WHERE id = $userID")->fetch_all();
+    $userName = $userName[0][0];
     $postID = $post[0];
 
     $query = "INSERT INTO views (post_id, ip) VALUES ('$postID', '$ip')";
