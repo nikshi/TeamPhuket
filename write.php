@@ -18,5 +18,5 @@
         CKEDITOR.replace( 'editor1' );
     </script>
     <input name="tags" type="text" id="name" class="user-write" placeholder="Add tags..."/>
-    <input name="submit" type="submit" value="Submit" class="buttons"/>
+    <input name="submit" type="submit" value="Submit" class="button-post"/>
 </form>

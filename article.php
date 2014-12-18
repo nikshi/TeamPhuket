@@ -43,7 +43,7 @@ foreach ($posts as $post):
         require 'article_tags.php';
         require 'comments.php' ?>
 
-        <button onclick="showCommentForm(<?php echo $post[0]?>)" id="btn-<?php echo $post[0]?>">Write a comment</button>
+        <button class="comment-btn" onclick="showCommentForm(<?php echo $post[0]?>)" id="btn-<?php echo $post[0]?>">Write a comment</button>
 
         <?php require 'comment_form.php' ?>
     </article>
