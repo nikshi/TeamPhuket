@@ -27,7 +27,7 @@ if ($con->query($searchQuery)) {
         $count++;
     }
     if ($count == 0){ ?>
-        <p> "Sorry, no tags match your choice"; </p>
+        <h2> "No tags match your choice" </h2>
     <?php }
 }else {
     echo "Error: " . $searchQuery . "<br>" . $con->error;
