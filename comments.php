@@ -1,4 +1,4 @@
-<div id="comments" class="comments">
+<div class="comments">
     <h4>Comments (<?php echo count($comments) ?>): </h4>
     <?php
     require 'config.php';
