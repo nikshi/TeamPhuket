@@ -1,7 +1,7 @@
 <?php
 require 'config.php';
 
-$searchedWord = $_GET['search'];
+$searchedWord = mysqli_real_escape_string($con, $_GET['search']);
 
 $searchQuery = "SELECT * FROM `tags` WHERE tags = '$searchedWord'";
 $arr = $con->query($searchQuery);

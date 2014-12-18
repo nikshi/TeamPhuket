@@ -3,12 +3,12 @@ require '../config.php';
 session_start();
 
 if (isset($_GET['submit'])) {
-    $title = $_GET['title'];
-    $post = $_GET['editor1'];
-    $userID = $_SESSION['loggedUserID'];
-    $tags = $_GET['tags'];
-    $category = $_GET['category'];
-    $tagsArr = explode(", ", $tags);
+    $title = mysqli_real_escape_string($con, $_GET['title']);
+    $post = mysqli_real_escape_string($con, $_GET['editor1']);
+    $userID = mysqli_real_escape_string($con, $_SESSION['loggedUserID']);
+    $tags = mysqli_real_escape_string($con, $_GET['tags']);
+    $category = mysqli_real_escape_string($con, $_GET['category']);
+    $tagsArr = mysqli_real_escape_string($con, explode(", ", $tags));
 
     require '../validations.php';
 

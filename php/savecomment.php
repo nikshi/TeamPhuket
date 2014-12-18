@@ -3,9 +3,9 @@ require '../config.php';
 session_start();
 
 if (isset($_GET['comment-submit'])) {
-    $name = $_GET['comment-name'];
-    $comment = $_GET['comment-content'];
-    $post = $_GET['post-id'];
+    $name = mysqli_real_escape_string($con, $_GET['comment-name']);
+    $comment = mysqli_real_escape_string($con, $_GET['comment-content']);
+    $post = mysqli_real_escape_string($con, $_GET['post-id']);
 
     require '../validations.php';
 

@@ -2,7 +2,7 @@
 require 'config.php';
 if(isset($_GET['tag'])) {
 
-    $tagName = $_GET['tag'];
+    $tagName = mysqli_real_escape_string($con, $_GET['tag']);
 }
     $sql = "SELECT * FROM tags WHERE tags ='$tagName'";
     $arrTags = $con->query($sql);

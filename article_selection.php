@@ -3,11 +3,11 @@ $firstPost = 0;
 $lastPost = 5;
 $originalQuery = $queryType;
 if ($queryType == 'month') {
-    $month = $_GET['month'];
-    $year = $_GET['year'];
+    $month = mysqli_real_escape_string($con, $_GET['month']);
+    $year = mysqli_real_escape_string($con, $_GET['year']);
     $queryType = "SELECT * FROM posts WHERE MONTH(date) = $month AND YEAR(date) = $year";
 } else if ($queryType == 'post') {
-    $id = $_GET['id'];
+    $id = mysqli_real_escape_string($con, $_GET['id']);
     $queryType = "SELECT * FROM posts WHERE id = $id";
 } else if ($queryType == 'all') {
     $queryType = "SELECT * FROM posts ORDER BY date DESC LIMIT 0, 5";
