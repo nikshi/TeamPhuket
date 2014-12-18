@@ -103,3 +103,8 @@ function showCommentForm(id) {
         form.setAttribute('style', 'display:none;');
     }
 }
+
+function removeComments(id){
+    var comment = document.getElementById('comment' + id);
+    document.getElementById('comments').removeChild(comment);
+}
