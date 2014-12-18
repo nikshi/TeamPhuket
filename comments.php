@@ -21,8 +21,9 @@
                 <div class="comment-text"><p><?php echo $comment[3] ?></p></div>
                 <?php
                 if ($type == 'admin'):?>
-                    <button class="del-comment-btn" onclick="removeComments(<?php echo $comment[0]?>)" id="btn-<?php echo $comment[0]?>">Delete this comment</button>
-                <?php endif
+                    <input type="submit" name="<?php echo $comment[0]?>"/>
+                <?php
+                endif
                 ?>
             </div>
         <?php endforeach;
