@@ -337,7 +337,7 @@ footer {
 }
 
 .del-comment-btn{
-    padding: .3% 1.8%;
+    padding: 1% 8%;
     background: rgb(187, 27, 14);
     border: 1px solid rgba(255, 133, 0, 0);
     border-radius: 5px;
@@ -364,4 +364,9 @@ footer {
     background: rgba(105, 52, 0, 0.68);
     color: white;
     transition: all .5s ease-in-out;
+}
+
+.del-form{
+    display: inline-block;
+    width: 25%;
 }
