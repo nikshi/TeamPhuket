@@ -103,24 +103,3 @@ function showCommentForm(id) {
         form.setAttribute('style', 'display:none;');
     }
 }
-
-function removeComments(id){
-    var comment = document.getElementById('comment' + id);
-    document.getElementById('comments').removeChild(comment);
-}
-
-function confirmDelete() {
-    if (confirm('Are you sure you want to delete this?')) {
-        //Make ajax call
-        $.ajax({
-            url: "scriptDelete.php",
-            type: "POST",
-            data: {id : 5},
-            dataType: "html",
-            success: function() {
-                alert("It was succesfully deleted!");
-            }
-        });
-
-    }
-}
