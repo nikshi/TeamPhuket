@@ -35,8 +35,8 @@ foreach ($posts as $post):
     ?>
 
     <article>
-        <a href="view.php?query=post&id=<?php echo $post[0] ?>"><h1><?php echo $post[2] ?></h1></a>
-        <p class="date-and-user">Posted by: <?php echo $userName ?> | <span class="post-date"><?php echo $post[1] ?></span> |
+        <a href="view.php?query=post&id=<?php echo $post[0] ?>"><h1><?php echo htmlentities($post[2]) ?></h1></a>
+        <p class="date-and-user">Posted by: <?php echo htmlentities($userName) ?> | <span class="post-date"><?php echo $post[1] ?></span> |
                                  Total views: <?php echo $totalViews ?> | Unique views: <?php echo $uniqueViews ?></p>
 
         <div class="article-text"><?php echo $post[3] ?></div>

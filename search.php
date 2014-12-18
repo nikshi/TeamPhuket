@@ -16,8 +16,8 @@ if ($con->query($searchQuery)) {
         while ($post = mysqli_fetch_assoc($postArr)): ?>
             <article>
                 <ul>
-                    <li><a href="view.php?query=post&id=<?php echo $postID ?>"><h1><?php echo $post['title'] ?></h1></a>
-                        <div class="article-text"><?php echo $post['text'] ?></div>
+                    <li><a href="view.php?query=post&id=<?php echo $postID ?>"><h1><?php echo htmlentities($post['title']) ?></h1></a>
+                        <div class="article-text"><?php echo htmlentities($post['text']) ?></div>
                         <div class=""><a href="view.php?query=post&id=<?php echo $postID ?>"><p>See details...</p>
                     </li>
                 <ul>

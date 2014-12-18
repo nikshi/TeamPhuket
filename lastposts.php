@@ -20,7 +20,7 @@
 
             ?>
             <li><a href="view.php?query=post&id=<?php echo $id ?>">
-                    <span class="title"><?php echo $title?></span><br>
+                    <span class="title"><?php echo htmlentities($title)?></span><br>
                     <span class="date"><?php echo $date?></span> <br>
                     <span class="category">in <?php echo $category?></span>
                 </a>

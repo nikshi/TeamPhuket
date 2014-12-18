@@ -8,7 +8,7 @@ $tagList = $tagList->fetch_all(); ?>
     <?php
     if (count($tagList) != 0) {
         foreach ($tagList as $tagEntry) { ;?>
-            <a href="viewbytags.php?tag=<?php echo $tagEntry[0] ?>" class="tag-entries"><?php echo $tagEntry[0] ?></a>
+            <a href="viewbytags.php?tag=<?php echo htmlentities($tagEntry[0]) ?>" class="tag-entries"><?php echo  htmlentities($tagEntry[0]) ?></a>
         <?php
         }
     } else {

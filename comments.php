@@ -4,7 +4,7 @@
     require 'config.php';
     if (isset($_SESSION['loggedUser'])):
     $userID = $_SESSION['loggedUserID'];
-    $query = "SELECT * FROM `users` WHERE id = '$userID'";
+    $query = "SELECT * FROM users WHERE id = '$userID'";
     $arrUser = $con->query($query);
 
     while ($row = mysqli_fetch_assoc($arrUser)){
@@ -17,8 +17,8 @@
     <?php else:
     foreach ($comments as $comment): ?>
     <div id="comment<?php echo $comment[0] ?>"">
-    <p class="date-and-user">By: <?php echo $comment[1] ?> | Date: <span class="post-date"><?php echo $comment[2] ?></span></p>
-    <div class="comment-text"><p><?php echo $comment[3] ?></p></div>
+    <p class="date-and-user">By: <?php echo htmlentities($comment[1]) ?> | Date: <span class="post-date"><?php echo $comment[2] ?></span></p>
+    <div class="comment-text"><p><?php echo htmlentities($comment[3]) ?></p></div>
     <?php
     if ($type == 'admin'):?>
         <form method="post" action="" class="del-form">

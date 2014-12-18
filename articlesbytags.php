@@ -14,7 +14,7 @@ if(isset($_GET['tag'])) {
 ?>
 <article>
     <ul>
-    <li><a href="view.php?query=post&id=<?php echo $post['id'] ?>"><h1><?php echo $post['title'] ?></h1></a>
+    <li><a href="view.php?query=post&id=<?php echo $post['id'] ?>"><h1><?php echo htmlentities($post['title']) ?></h1></a>
     <div class="article-text"><?php echo $post['text'] ?></div>
         <div class=""><a href="view.php?query=post&id=<?php echo $post['id'] ?>"><p>See details...</p></li>
 
